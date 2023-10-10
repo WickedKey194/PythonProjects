@@ -1,0 +1,5 @@
+Name: Knight
+Weapon: Sword
+Armor: Platemail
+Health: 100
+Coins: 0
