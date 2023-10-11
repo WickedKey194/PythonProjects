@@ -14,6 +14,10 @@ global counter
 counter = 0
 '''
 
+def FINAL():
+    print(1)
+    clear_screen()
+    msvcrt.getch()
 
 class Knight:
     def __init__(self, name, weapon, armor):
@@ -738,6 +742,34 @@ class Knight:
                 print("Press any key to continue...")
                 msvcrt.getch()  # Wait for user input to continue
                 clear_screen()  # Recursively call the function to clear the screen again
+                print("""
+                    MOROW                      
+                    
+                       /\\
+                      /OO\\
+                     /    \\
+                     
+                         By the way, if you noticed, the damage you give to the opponent depends on his armor.
+                         
+                """)
+                time.sleep(3)
+                print("Press any key to continue...")
+                msvcrt.getch()  # Wait for user input to continue
+                clear_screen()  # Recursively call the function to clear the screen again
+                print("""
+                    MOROW                      
+                    
+                       /\\
+                      /OO\\
+                     /    \\
+                     
+                         The exception is the soldiers, who train constantly to keep up with those who defeat them.
+                         
+                """)
+                time.sleep(3)
+                print("Press any key to continue...")
+                msvcrt.getch()  # Wait for user input to continue
+                clear_screen()  # Recursively call the function to clear the screen again
                 win = False
                 return
 
@@ -786,34 +818,6 @@ class Knight:
             msvcrt.getch()  # Wait for user input to continue
             clear_screen()  # Recursively call the function to clear the screen again
             #pw += 2
-            print("""
-                MOROW                      
-                
-                   /\\
-                  /OO\\
-                 /    \\
-                 
-                     By the way, if you noticed, the damage you give to the opponent depends on his armor.
-                     
-            """)
-            time.sleep(3)
-            print("Press any key to continue...")
-            msvcrt.getch()  # Wait for user input to continue
-            clear_screen()  # Recursively call the function to clear the screen again
-            print("""
-                MOROW                      
-                
-                   /\\
-                  /OO\\
-                 /    \\
-                 
-                     The exception is the soldiers, who train constantly to keep up with those who defeat them.
-                     
-            """)
-            time.sleep(3)
-            print("Press any key to continue...")
-            msvcrt.getch()  # Wait for user input to continue
-            clear_screen()  # Recursively call the function to clear the screen again
             
     def tournament26(self, enemy):
         knight_health = self.health  # save the initial health of the Knight
@@ -985,6 +989,21 @@ class Knight:
                 print("Press any key to continue...")
                 msvcrt.getch()  # Wait for user input to continue
                 clear_screen()  # Recursively call the function to clear the screen again
+                print("""
+                    MOROW                      
+                    
+                       /\\
+                      /OO\\
+                     /    \\
+                     
+                         Perfect! You defeated the Iron Stray group!
+                         The last three were from this group.
+                         
+                """)
+                time.sleep(3)
+                print("Press any key to continue...")
+                msvcrt.getch()  # Wait for user input to continue
+                clear_screen()  # Recursively call the function to clear the screen again
                 win = False
                 return
 
@@ -1033,21 +1052,6 @@ class Knight:
             msvcrt.getch()  # Wait for user input to continue
             clear_screen()  # Recursively call the function to clear the screen again
             #pw += 2
-            print("""
-                MOROW                      
-                
-                   /\\
-                  /OO\\
-                 /    \\
-                 
-                     Perfect! You defeated the Iron Stray group!
-                     The last three were from this group.
-                     
-            """)
-            time.sleep(3)
-            print("Press any key to continue...")
-            msvcrt.getch()  # Wait for user input to continue
-            clear_screen()  # Recursively call the function to clear the screen again
 
     def tournament23(self, enemy):
         knight_health = self.health  # save the initial health of the Knight
@@ -3454,6 +3458,7 @@ class Knight:
             
     def MorrowFight(self, enemy):
         #clear_screen()  # Recursively call the function to clear the screen again
+        FINAL()
         '''
         print("""
             MORROW
@@ -3667,6 +3672,7 @@ class Knight:
 
 # Read the counter value from the file
 try:
+    global counter
     with open("data.txt", "r") as file:
         counter = int(file.read().strip())
 except FileNotFoundError:
@@ -5969,6 +5975,9 @@ def bodyguards1():
         cnt -= 1
         with open("Bodyguards.txt", "w") as f:
             f.write(str(cnt))
+            
+    if cnt < 0:
+        FINAL()
     
 def store():
     clear_screen()
@@ -6687,6 +6696,8 @@ def Game_rules():
 def start_story():
     global counter
     counter += 1
+    with open("data.txt", "w") as file:
+        file.write(str(counter))
     print("History says that...")
     time.sleep(3)
     clear_screen()
